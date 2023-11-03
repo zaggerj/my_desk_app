@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // 目标语言的版本
+    "useDefineForClassFields": true,
+    "module": "esnext", // 生成代码的模板标准
+    "moduleResolution": "node", // 模块解析策略，ts默认用node的解析策略，即相对的方式导入
+    "strict": true, // 开启所有严格的类型检查
+    "jsx": "preserve", // 指定将 JSX 编译成什么形式
+    "jsxFactory": "h", // 当使用经典的JSX运行时编译JSX元素时，更改.js文件中调用的函数，默认：React.createElement 。
+    "jsxFragmentFactory": "Fragment",
+    "sourceMap": true, // 生成目标文件的sourceMap文件
+    "resolveJsonModule": true, // 指定 JSX 片段工厂函数在指定了 jsxFactory 编译器选项的情况下针对 react JSX 发出时使用。
+    "esModuleInterop": true, // 允许export=导出，由import from 导入
+    // TS需要引用的库，即声明文件，es5 默认引用dom、es5、scripthost,如需要使用es的高级版本特性，通常都需要配置，如es8的数组新特性需要引入"ES2019.Array"
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "vite/client",
+      "element-plus/global",
+      "unplugin-icons/types/vue"
+    ], // 加载的声明文件包
+    "baseUrl": ".", // 解析非相对模块的基地址，默认是当前目录
+    "skipLibCheck": true, // 忽略所有的声明文件（ *.d.ts）的类型检查。
+    "paths": { // 路径映射，相对于baseUrl
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  // 指定一个匹配列表（属于自动指定该路径下的所有ts相关文件）
+  "include": [
+    "src/**/*.ts",
+    "**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/autoImport/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

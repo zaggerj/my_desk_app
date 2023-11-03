@@ -1,0 +1,64 @@
+{
+  "name": "my_desk_app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "electron/main.ts",
+  "scripts": {
+    "preview": "vite preview",
+    "start": "electron .",
+    "dev": "concurrently -k \"vite\" \"yarn dev:electron\"",
+    "dev:electron": "wait-on tcp:9527 && cross-env NODE_ENV=development electron .",
+    "build": "vite build && electron-builder --win --config",
+    "build:mac": "vite build && electron-builder --mac --config",
+    "build:linux": "vite build && electron-builder --linux --config"
+  },
+  "build": {
+    "productName": "TigerSong",
+    "copyright": "Copyright @ 2023 TigerSong",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": false,
+      "createStartMenuShortcut": false
+    }
+  },
+  "dependencies": {
+    "@electron/remote": "^2.0.12",
+    "animate.css": "^4.1.1",
+    "element-plus": "^2.4.1",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.1.21",
+    "@iconify-json/ep": "^1.1.12",
+    "@iconify-json/noto": "^1.1.12",
+    "@types/node": "^20.8.10",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^27.0.3",
+    "electron-builder": "^24.6.4",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "typescript": "^5.0.2",
+    "unplugin-auto-import": "^0.16.7",
+    "unplugin-icons": "^0.17.3",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5",
+    "wait-on": "^7.1.0"
+  }
+}
