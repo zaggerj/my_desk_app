@@ -54,6 +54,7 @@
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
     "typescript": "^5.0.2",
+    "unocss": "^0.57.3",
     "unplugin-auto-import": "^0.16.7",
     "unplugin-icons": "^0.17.3",
     "unplugin-vue-components": "^0.25.2",

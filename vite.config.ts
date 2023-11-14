@@ -7,6 +7,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import UnoCSS from 'unocss/vite'
 const pathSrc = path.resolve(__dirname, 'src')
 export default defineConfig({
   resolve: {
@@ -15,6 +16,7 @@ export default defineConfig({
     }
   },
   plugins: [
+    UnoCSS(),
     vue(),
     vueJsx(), // 支持jsx、tsx的写法
     AutoImport({
