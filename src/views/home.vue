@@ -1,5 +1,5 @@
 <template>
-  <div style="background: rgb(217, 217, 217); height: 100vh; width: 100%; padding-top: 100px">
+  <div class="flex" style="background: rgb(217, 217, 217); height: 100vh; width: 100%; padding-top: 100px">
     <div style="text-align: center; margin-top: 50px">
       <el-button type="primary" @click="goHome">去home1</el-button>
     </div>
